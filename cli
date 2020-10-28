@@ -1,0 +1,106 @@
+<?php
+
+namespace Library;
+
+use ORM;
+use ORM\Migrations;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+
+class ControllerCLI {
+    public static function make($name) {
+        
+        $data = '<?php
+
+namespace Library\Controllers;
+use Library;
+
+class '.$name.' {
+
+}
+';
+
+        file_put_contents('./src/Controllers/'.$name.'.php', $data);
+    }
+}
+
+class ViewCLI {
+    public static function make($name) {
+        file_put_contents('./views/'.$name.'.latte', '');
+    }
+}
+
+class ModelCLI {
+    public static function make($name) {
+        $data = '<?php
+namespace Library\Models;
+
+use ORM\Model\Model;
+
+//Class cannot override base constructor
+//If you want this you must use parent constructor in constructor of this class
+
+class '.$name.' extends Model {
+
+    public function init() {
+        
+    }
+
+}
+';
+    file_put_contents('./src/Models/'.$name.'.php', $data);
+
+    }
+}
+
+if(!isset($argv[1]))
+    die("Error, missing argument");
+
+switch ($argv[1]) {
+    case 'make':
+
+        switch ($argv[2]) {
+            case 'controller':
+                ControllerCLI::make($argv[3]);
+                break;
+            case 'view':
+                ViewCLI::make($argv[3]);
+                break;
+
+            case 'model':
+                ModelCLI::make($argv[3]);
+            break;
+            
+            default:
+                die('Invalid argument: '.$argv[2]);
+                break;
+        }
+
+        break;
+    
+    case 'migrate':
+
+        $migration = new ORM\Migrations\Migrations;
+        $migration->migrate();
+
+        die('Mirate successful');
+
+        break;
+    case 'map':
+        $migration = new ORM\Migrations\Migrations;
+        
+        $tables = $migration->getAllTables();
+
+        foreach ($tables as $value) {
+            ModelCLI::make($value);
+        }
+
+        die('Database map successful');
+    break;
+
+    default:
+        die('Invalid argument: '.$argv[1]);
+        break;
+}
+

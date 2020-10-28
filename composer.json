@@ -1,0 +1,29 @@
+{
+    "name": "zwolinkox/library-system",
+    "autoload": {
+        "psr-4": {
+            "Library\\": "src/",
+            "ORM\\": "vendor/orm/src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Szymon Zwoliński",
+            "email": "szymon.zwolinski2001@gmail.com",
+            "role": "Backend Developer"
+        },
+        {
+            "name": "Kamil Ujec",
+            "email": "kamil.ujec@gmail.com",
+            "role": "Frontend Developer"
+        }
+    ],
+    "description": "Library CRM school project",
+    "type": "project",
+    "require": {
+        "phroute/phroute": "^2.1",
+        "latte/latte": "^2.8",
+        "zwolinkox/orm": "^1.0"
+    },
+    "minimum-stability": "dev"
+}

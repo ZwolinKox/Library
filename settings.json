@@ -1,0 +1,9 @@
+{
+    "orm": {
+      "host": "localhost",
+      "db": "orm",
+      "user": "root",
+      "password": "",
+      "charset": "utf8mb4"
+    }
+  }
