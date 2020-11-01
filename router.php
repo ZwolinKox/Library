@@ -14,12 +14,10 @@ $router = new RouteCollector();
 
 
 $router->group(['prefix' => 'library'], function ($router) {
-    $router->get('/zwolin', ['Library\Controllers\Home', 'zwolin']);
-    $router->get('/home', ['Library\Controllers\Home', 'zwolin']);
+    $router->get('/home', ['Library\Controllers\HomeController', 'home']);
 
-    $router->get('/login', function() {
-        Auth::login('zwolin2', 'zwolin2');
-    });
+    $router->get('/login', ['Library\Controllers\AuthController', 'login']);
+    $router->get('/register', ['Library\Controllers\AuthController', 'register']);
 
     $router->get('/logout', function() {
         Auth::logout();

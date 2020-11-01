@@ -10,7 +10,7 @@ class View {
         $latte->setTempDirectory('./tmp');
 
         // render to output
-        return $latte->renderToString('./views/'.$path, $params);
+        return $latte->renderToString('./views/'.$path.'.latte', $params);
     }
 
 
