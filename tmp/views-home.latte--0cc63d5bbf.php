@@ -28,6 +28,8 @@ final class Template0cc63d5bbf extends Latte\Runtime\Template
 		$this->renderBlock('title', get_defined_vars());
 ?>
 
+
+
 <?php
 		$this->renderBlock('content', get_defined_vars());
 		return get_defined_vars();
@@ -44,27 +46,49 @@ final class Template0cc63d5bbf extends Latte\Runtime\Template
 
 	public function blockTitle(array $_args): void
 	{
-		?>First page<?php
+		?>Strona główna<?php
 	}
 
 
 	public function blockContent(array $_args): void
 	{
-?><p>Lorem Gypsum...</p>
+?><div class="container  px-5">
+    <div class="card-deck mb-3">
+        <a href="#" class="card border-secondary text-center my-card my-card-link">
+            <div class="card-body">
+                <i class="fas fa-book"></i>
+                <h4 class="card-title">KSIĄŻKI</h4>
+            </div>
+        </a>
+        <a href="#" class="card border-secondary text-center my-card my-card-link">
+            <div class="card-body">
+                <i class="fas fa-users"></i>
+                <h4 class="card-title">CZYTELNICY</h4>
+            </div>
+        </a>
+        <a href="#" class="card border-secondary text-center my-card my-card-link">
+            <div class="card-body">
+                <i class="fas fa-pen-alt"></i>
+                <h4 class="card-title">AUTORZY</h4>
+            </div>
+        </a>
+    </div>
+    <div href="#" class="card-deck">
+        <a href="#" class="card border-secondary text-center my-card my-card-link">
+            <div class="card-body">
+                <i class="fas fa-clock"></i>
+                <h4 class="card-title">WYPOŻYCZENIA</h4>
+            </div>
+        </a>
+        <a href="#" class="card border-secondary text-center my-card my-card-link">
+            <div class="card-body">
+                <i class="fas fa-briefcase"></i>
+                <h4 class="card-title">PRACOWNICY</h4>
+            </div>
+        </a>
 
-<?php
-		if (Library\Auth\Auth::isLogin()) {
-			?>    Zalogowany <?php echo LR\Filters::escapeHtmlText(Library\Auth\Auth::user()->name) /* line 8 */ ?>
-
-<?php
-		}
-		else {
-?>
-        Nie zalogowano
-<?php
-		}
-?>
-
+    </div>
+</div>
 <?php
 	}
 
