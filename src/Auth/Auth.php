@@ -23,9 +23,9 @@ class Auth {
         $_SESSION['login'] = true;
     }
 
-    public static function login(string $name, string $password) : bool {
+    public static function login(string $email, string $password) : bool {
         $user = new Models\User();
-        $user = $user->getElement(['name' => $name, 'password' => md5($password)]);
+        $user = $user->getElement(['email' => $email, 'password' => md5($password)]);
 
         if(!is_object($user))
             return false;
@@ -45,13 +45,13 @@ class Auth {
         session_destroy();
     }
 
-    public static function register(string $name, string $password, string $email) {
+    public static function register(string $email, string $password, string $name) {
         $user = new Models\User();
 
         if(is_object($user->getElement(['email' => $email])))
             return 'Istnieje użytkownik o podanym emailu';
 
-        $user->insert(['name' => $name, 'password' => $password, 'email' => $email, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
+        $user->insert(['name' => $name, 'password' => md5($password), 'email' => $email, 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()]);
 
         return true;
     }

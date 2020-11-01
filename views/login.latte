@@ -13,7 +13,14 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Adres email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control {ifset $error} is-invalid {/ifset}" name="email" required autocomplete="email" autofocus>
+
+                                 {ifset $error}
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{$error}</strong>
+                                    </span>
+                                {/ifset}
+
                             </div>
                         </div>
 

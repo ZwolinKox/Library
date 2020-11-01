@@ -3,6 +3,8 @@
 namespace Library\Controllers;
 use Library;
 use Library\View;
+use Library\Post;
+use Library\Get;
 
 class HomeController {
 

@@ -4,7 +4,9 @@ namespace Library\Request;
 
 class Get {
     public static function get(string $index) {
-        return $_GET[$index];
+        if(isset($_GET[$index]))
+            return $_GET[$index];
+        return null;
     }
 
     public static function set(string $index, $value) {

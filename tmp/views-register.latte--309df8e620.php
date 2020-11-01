@@ -38,7 +38,9 @@ final class Template309df8e620 extends Latte\Runtime\Template
 
 	public function blockContent(array $_args): void
 	{
-?><div class="container">
+		extract($_args);
+?>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-light">
@@ -50,7 +52,21 @@ final class Template309df8e620 extends Latte\Runtime\Template
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Nazwa użytkownika</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control <?php
+		if (isset($errorName)) {
+			?> is-invalid <?php
+		}
+?>" name="name" required autocomplete="name" autofocus>
+
+<?php
+		if (isset($errorName)) {
+?>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo LR\Filters::escapeHtmlText($errorName) /* line 20 */ ?></strong>
+                                    </span>
+<?php
+		}
+?>
                             </div>
                         </div>
 
@@ -58,7 +74,21 @@ final class Template309df8e620 extends Latte\Runtime\Template
                             <label for="email" class="col-md-4 col-form-label text-md-right">Adres email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" required autocomplete="email">
+                                <input id="email" type="email" class="form-control <?php
+		if (isset($errorEmail)) {
+			?> is-invalid <?php
+		}
+?>" name="email" required autocomplete="email">
+
+<?php
+		if (isset($errorEmail)) {
+?>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo LR\Filters::escapeHtmlText($errorEmail) /* line 34 */ ?></strong>
+                                    </span>
+<?php
+		}
+?>
                             </div>
                         </div>
 
@@ -66,7 +96,21 @@ final class Template309df8e620 extends Latte\Runtime\Template
                             <label for="password" class="col-md-4 col-form-label text-md-right">Hasło</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" class="form-control <?php
+		if (isset($errorPassword)) {
+			?> is-invalid <?php
+		}
+?>" name="password" required autocomplete="new-password">
+
+<?php
+		if (isset($errorPassword)) {
+?>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo LR\Filters::escapeHtmlText($errorPassword) /* line 48 */ ?></strong>
+                                    </span>
+<?php
+		}
+?>
                             </div>
                         </div>
 
@@ -74,7 +118,21 @@ final class Template309df8e620 extends Latte\Runtime\Template
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Potwierdź hasło</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control <?php
+		if (isset($errorSecondPassword)) {
+			?> is-invalid <?php
+		}
+?>" name="password_confirmation" required autocomplete="new-password">
+
+<?php
+		if (isset($errorSecondPassword)) {
+?>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo LR\Filters::escapeHtmlText($errorSecondPassword) /* line 62 */ ?></strong>
+                                    </span>
+<?php
+		}
+?>
                             </div>
                         </div>
 

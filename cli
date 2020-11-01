@@ -15,6 +15,11 @@ class ControllerCLI {
 
 namespace Library\Controllers;
 use Library;
+use Library\View;
+use Library\Auth\Auth;
+use Library\Request\Post;
+use Library\Request\Get;
+
 
 class '.$name.' {
 

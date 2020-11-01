@@ -38,7 +38,9 @@ final class Templatec6fff29d73 extends Latte\Runtime\Template
 
 	public function blockContent(array $_args): void
 	{
-?><div class="container">
+		extract($_args);
+?>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -50,7 +52,22 @@ final class Templatec6fff29d73 extends Latte\Runtime\Template
                             <label for="email" class="col-md-4 col-form-label text-md-right">Adres email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="form-control <?php
+		if (isset($error)) {
+			?> is-invalid <?php
+		}
+?>" name="email" required autocomplete="email" autofocus>
+
+<?php
+		if (isset($error)) {
+?>
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong><?php echo LR\Filters::escapeHtmlText($error) /* line 20 */ ?></strong>
+                                    </span>
+<?php
+		}
+?>
+
                             </div>
                         </div>
 
