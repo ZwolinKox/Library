@@ -3,6 +3,7 @@
 namespace Library\Controllers;
 use Library;
 use Library\View;
+use Library\Auth\Auth;
 
 class AuthController {
     
@@ -20,5 +21,10 @@ class AuthController {
 
     public function registerUser() {
 
+    }
+
+    public function logout() {
+        Auth::logout();
+        header('Location: ./login');
     }
 }
