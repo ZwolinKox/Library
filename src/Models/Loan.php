@@ -6,7 +6,7 @@ use ORM\Model\Model;
 //Class cannot override base constructor
 //If you want this you must use parent constructor in constructor of this class
 
-class Mage extends Model {
+class Loan extends Model {
 
     public function init() {
         

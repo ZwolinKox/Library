@@ -1,3 +1,13 @@
-{isset($cond) ? hello}
+{layout 'layouts/layout.latte'}
 
-<h3>Witaj na mojej stronie</h3>
+{block title}First page{/block}
+
+{block content}<p>Lorem Gypsum...</p>
+
+{if Library\Auth\Auth::isLogin()}
+    Zalogowany {Library\Auth\Auth::user()->name}
+    {else}
+        Nie zalogowano
+{/if}
+
+{/block}

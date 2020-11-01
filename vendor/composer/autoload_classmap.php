@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Latte\\CompileException' => $vendorDir . '/latte/latte/src/Latte/exceptions.php',
     'Latte\\Compiler' => $vendorDir . '/latte/latte/src/Latte/Compiler/Compiler.php',
     'Latte\\Engine' => $vendorDir . '/latte/latte/src/Latte/Engine.php',
@@ -45,4 +46,7 @@ return array(
     'Latte\\Token' => $vendorDir . '/latte/latte/src/Latte/Compiler/Token.php',
     'Latte\\TokenIterator' => $vendorDir . '/latte/latte/src/Latte/Compiler/TokenIterator.php',
     'Latte\\Tokenizer' => $vendorDir . '/latte/latte/src/Latte/Compiler/Tokenizer.php',
+    'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+    'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+    'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
 );

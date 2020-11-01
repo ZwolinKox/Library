@@ -1,25 +1,38 @@
 {
     "tables":[
        {
-          "mages":"TABLE_NAME",
+          "users":"TABLE_NAME",
           "id":"INT NOT NULL AUTO_INCREMENT",
-          "name":"VARCHAR(40)",
-          "email":"VARCHAR(40)",
-          "PRIMARY KEY": "(id)"
+          "name":"VARCHAR(40) NULL",
+          "email":"VARCHAR(40) NULL",
+          "PRIMARY KEY": "(`id`)",
+          "created_at": "DATETIME NULL",
+          "updated_at": "DATETIME NULL",
+          "UNIQUE INDEX": "id_UNIQUE` (`id` ASC) VISIBLE)"
        },
        {
-         "horses":"TABLE_NAME",
-         "id":"INT NOT NULL AUTO_INCREMENT",
-         "name":"VARCHAR(40)",
-         "email":"VARCHAR(40)",
-         "PRIMARY KEY": "(id)"
+         "employees":"TABLE_NAME",
+         "id": "INT NOT NULL AUTO_INCREMENT",
+         "name": "VARCHAR(45) NULL",
+         "email": "VARCHAR(45) NULL",
+         "password": "VARCHAR(45) NULL",
+         "is_admin": "TINYINT NULL",
+         "created_at": "DATETIME NULL",
+         "update_at": "DATETIME NULL",
+         "PRIMARY KEY": "(`id`)",
+         "UNIQUE INDEX": "`id_UNIQUE` (`id` ASC) VISIBLE)"
       },
       {
-         "xd":"TABLE_NAME",
-         "id":"INT NOT NULL AUTO_INCREMENT",
-         "name":"VARCHAR(40)",
-         "email":"VARCHAR(40)",
-         "PRIMARY KEY": "(id)"
+         "books": "TABLE_NAME",
+         "id": "INT NOT NULL AUTO_INCREMENT",
+         "name": "VARCHAR(45) NULL",
+         "created_at": "DATETIME NULL",
+         "updated_at": "DATETIME NULL",
+         "PRIMARY KEY": "(`id`)",
+         "UNIQUE INDEX": "`id_UNIQUE` (`id` ASC) VISIBLE)"
       }
-    ]
+   ]
  }
+
+
+ 
