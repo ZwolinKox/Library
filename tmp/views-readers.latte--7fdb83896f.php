@@ -89,8 +89,8 @@ final class Template7fdb83896f extends Latte\Runtime\Template
                                                     <td><?php echo LR\Filters::escapeHtmlText($element->email) /* line 32 */ ?></td>
                                                     <td class="text-center">
                                                         <div class="btn-group inline">
-                                                            <button type="button" class="btn btn-success">Edytuj</button>
-                                                            <button type="button" class="btn btn-danger">Usuń</button>
+                                                            <button type="button" class="btn btn-success"><i class="fas fa-edit" style="font-size: 16px"></i>Edytuj</button>
+                                                            <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt" style="font-size: 16px"></i>Usuń</button>
                                                         </div>
                                                     </td>
                                                 </tr>

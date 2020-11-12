@@ -50,7 +50,7 @@ final class Template4928aec153 extends Latte\Runtime\Template
 
 	public function blockTitle(array $_args): void
 	{
-		?>Książki<?php
+		?>Wypożyczenia<?php
 	}
 
 
@@ -62,7 +62,7 @@ final class Template4928aec153 extends Latte\Runtime\Template
     <div class="container body-content">
     <button type="button" class="btn btn-primary" style="margin: 15px" onclick="location.href='./home'">Wróć do menu</button>
         <div class="page-header">
-            <label class="heading">Książki</label>
+            <label class="heading">Wypożyczenia</label>
             
             <div class="form-group">
                 <fieldset>
@@ -111,8 +111,8 @@ final class Template4928aec153 extends Latte\Runtime\Template
 
                                                     <td class="text-center">
                                                         <div class="btn-group inline">
-                                                            <button type="button" class="btn btn-success">Edytuj</button>
-                                                            <button type="button" class="btn btn-danger">Usuń</button>
+                                                            <button type="button" class="btn btn-success"><i class="fas fa-edit" style="font-size: 16px"></i>Edytuj</button>
+                                                            <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt" style="font-size: 16px"></i>Usuń</button>
                                                         </div>
                                                     </td>
                                                 </tr>
