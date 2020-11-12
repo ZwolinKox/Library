@@ -54,33 +54,33 @@ final class Template0cc63d5bbf extends Latte\Runtime\Template
 	{
 ?><div class="container  px-5">
     <div class="card-deck mb-3">
-        <a href="#" class="card border-secondary text-center my-card my-card-link">
+        <a href="./books" class="card border-secondary text-center my-card my-card-link">
             <div class="card-body">
                 <i class="fas fa-book"></i>
                 <h4 class="card-title">KSIĄŻKI</h4>
             </div>
         </a>
-        <a href="#" class="card border-secondary text-center my-card my-card-link">
+        <a href="./readers" class="card border-secondary text-center my-card my-card-link">
             <div class="card-body">
                 <i class="fas fa-users"></i>
                 <h4 class="card-title">CZYTELNICY</h4>
             </div>
         </a>
-        <a href="#" class="card border-secondary text-center my-card my-card-link">
+        <a href="./authors" class="card border-secondary text-center my-card my-card-link">
             <div class="card-body">
                 <i class="fas fa-pen-alt"></i>
                 <h4 class="card-title">AUTORZY</h4>
             </div>
         </a>
     </div>
-    <div href="#" class="card-deck">
-        <a href="#" class="card border-secondary text-center my-card my-card-link">
+    <div class="card-deck">
+        <a href="./loans" class="card border-secondary text-center my-card my-card-link">
             <div class="card-body">
                 <i class="fas fa-clock"></i>
                 <h4 class="card-title">WYPOŻYCZENIA</h4>
             </div>
         </a>
-        <a href="#" class="card border-secondary text-center my-card my-card-link">
+        <a href="./employees" class="card border-secondary text-center my-card my-card-link">
             <div class="card-body">
                 <i class="fas fa-briefcase"></i>
                 <h4 class="card-title">PRACOWNICY</h4>
