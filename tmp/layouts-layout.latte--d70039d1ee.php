@@ -32,14 +32,15 @@ final class Templated70039d1ee extends Latte\Runtime\Template
     <link rel="stylesheet" href="./resources/css/app.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script defer src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>   
     <script defer src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>   
     <script defer src="https://kit.fontawesome.com/0f41993dae.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-    <script src="./resources/js/loading.js">
     <script defer src="./resources/js/table.js"></script>
+    <script src="./resources/js/loading.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table-locale-all.min.js"></script>
     
 
 
@@ -89,7 +90,7 @@ final class Templated70039d1ee extends Latte\Runtime\Template
 ?>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <?php echo LR\Filters::escapeHtmlText(Library\Auth\Auth::user()->name) /* line 59 */ ?>
+                                <?php echo LR\Filters::escapeHtmlText(Library\Auth\Auth::user()->name) /* line 60 */ ?>
 
                             </a>
 
