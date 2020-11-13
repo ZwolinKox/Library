@@ -39,7 +39,7 @@ final class Template262a7b299d extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['element' => '28'], $this->params) as $_v => $_l) {
+			foreach (array_intersect_key(['element' => '27'], $this->params) as $_v => $_l) {
 				trigger_error("Variable \$$_v overwritten in foreach on line $_l");
 			}
 		}
@@ -63,7 +63,6 @@ final class Template262a7b299d extends Latte\Runtime\Template
     <button type="button" class="btn btn-primary" style="margin: 15px" onclick="location.href='./home'">Wróć do menu</button>
         <div class="page-header">
             <label class="heading">Książki</label>
-            
             <div class="form-group">
                 <fieldset>
                     <form action="" class="form-group" method="post">
@@ -84,10 +83,10 @@ final class Template262a7b299d extends Latte\Runtime\Template
 		foreach ($books as $element) {
 ?>
                                                 <tr>
-                                                    <td><?php echo LR\Filters::escapeHtmlText($element->id) /* line 30 */ ?></td>
-                                                    <td><?php echo LR\Filters::escapeHtmlText($element->name) /* line 31 */ ?></td>
-                                                    <td><?php echo LR\Filters::escapeHtmlText($element->author_first_name) /* line 32 */ ?> <?php
-			echo LR\Filters::escapeHtmlText($element->author_last_name) /* line 32 */ ?></td>
+                                                    <td><?php echo LR\Filters::escapeHtmlText($element->id) /* line 29 */ ?></td>
+                                                    <td><?php echo LR\Filters::escapeHtmlText($element->name) /* line 30 */ ?></td>
+                                                    <td><?php echo LR\Filters::escapeHtmlText($element->author_first_name) /* line 31 */ ?> <?php
+			echo LR\Filters::escapeHtmlText($element->author_last_name) /* line 31 */ ?></td>
                                                     <td class="text-center">
                                                         <div class="btn-group inline">
                                                             <button type="button" class="btn btn-success"><i class="fas fa-edit" style="font-size: 16px"></i>Edytuj</button>

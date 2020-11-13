@@ -86,9 +86,12 @@ final class Template0cc63d5bbf extends Latte\Runtime\Template
                 <h4 class="card-title">PRACOWNICY</h4>
             </div>
         </a>
+        
+        
 
     </div>
 </div>
+
 <?php
 	}
 
