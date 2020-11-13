@@ -39,7 +39,7 @@ final class Template7fdb83896f extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['element' => '28'], $this->params) as $_v => $_l) {
+			foreach (array_intersect_key(['element' => '29'], $this->params) as $_v => $_l) {
 				trigger_error("Variable \$$_v overwritten in foreach on line $_l");
 			}
 		}
@@ -61,6 +61,7 @@ final class Template7fdb83896f extends Latte\Runtime\Template
 
     <div class="container body-content">
     <button type="button" class="btn btn-primary" style="margin: 15px" onclick="location.href='./home'">Wróć do menu</button>
+    <button type="button" class="right btn btn-primary" style="margin: 15px" onclick="location.href='./home'">Wróć do menu</button>
         <div class="page-header">
             <label class="heading">Czytelnicy</label>
             
@@ -84,9 +85,9 @@ final class Template7fdb83896f extends Latte\Runtime\Template
 		foreach ($users as $element) {
 ?>
                                                 <tr>
-                                                    <td><?php echo LR\Filters::escapeHtmlText($element->id) /* line 30 */ ?></td>
-                                                    <td><?php echo LR\Filters::escapeHtmlText($element->name) /* line 31 */ ?></td>
-                                                    <td><?php echo LR\Filters::escapeHtmlText($element->email) /* line 32 */ ?></td>
+                                                    <td><?php echo LR\Filters::escapeHtmlText($element->id) /* line 31 */ ?></td>
+                                                    <td><?php echo LR\Filters::escapeHtmlText($element->name) /* line 32 */ ?></td>
+                                                    <td><?php echo LR\Filters::escapeHtmlText($element->email) /* line 33 */ ?></td>
                                                     <td class="text-center">
                                                         <div class="btn-group inline">
                                                             <button type="button" class="btn btn-success"><i class="fas fa-edit" style="font-size: 16px"></i>Edytuj</button>

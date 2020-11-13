@@ -28,6 +28,7 @@ final class Templated70039d1ee extends Latte\Runtime\Template
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
     <link rel="stylesheet" href="./resources/css/lux.css">
     <link rel="stylesheet" href="./resources/css/app.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css">
@@ -90,7 +91,7 @@ final class Templated70039d1ee extends Latte\Runtime\Template
 ?>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <?php echo LR\Filters::escapeHtmlText(Library\Auth\Auth::user()->name) /* line 60 */ ?>
+                                <?php echo LR\Filters::escapeHtmlText(Library\Auth\Auth::user()->name) /* line 61 */ ?>
 
                             </a>
 
@@ -113,6 +114,10 @@ final class Templated70039d1ee extends Latte\Runtime\Template
 		$this->renderBlock('content', get_defined_vars());
 ?>
         </main>
+        
+        <footer class="fixed-bottom text-center bg-dark text-white">
+                <p style="margin-top: 25px;">Biblioteka 2020 &copy;</p>
+        </footer>
     </div>
   </body>
 </html>
