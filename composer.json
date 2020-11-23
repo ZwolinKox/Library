@@ -23,7 +23,8 @@
     "require": {
         "phroute/phroute": "^2.1",
         "latte/latte": "^2.8",
-        "nesbot/carbon": "^2.0@dev"
+        "nesbot/carbon": "^2.0@dev",
+        "rakit/validation": "dev-master"
     },
     "minimum-stability": "dev"
 }

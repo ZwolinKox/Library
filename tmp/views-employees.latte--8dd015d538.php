@@ -39,7 +39,7 @@ final class Template8dd015d538 extends Latte\Runtime\Template
 	{
 		extract($this->params);
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === "extends") {
-			foreach (array_intersect_key(['element' => '29'], $this->params) as $_v => $_l) {
+			foreach (array_intersect_key(['element' => '30'], $this->params) as $_v => $_l) {
 				trigger_error("Variable \$$_v overwritten in foreach on line $_l");
 			}
 		}
@@ -70,6 +70,7 @@ final class Template8dd015d538 extends Latte\Runtime\Template
                         <div class="table-responsive">
                             <div class="table-responsive">                            
                                 <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%" data-toggle="table" data-locale="pl-PL">
+                                <button type="button" class="float-right btn btn-primary" style="margin: 15px" onclick="location.href='./home'">Dodaj pracownika</button>
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -85,7 +86,7 @@ final class Template8dd015d538 extends Latte\Runtime\Template
 		foreach ($employees as $element) {
 ?>
                                                 <tr>
-                                                    <td><?php echo LR\Filters::escapeHtmlText($element->id) /* line 31 */ ?></td>
+                                                    <td><?php echo LR\Filters::escapeHtmlText($element->id) /* line 32 */ ?></td>
 <?php
 			if ($element->is_admin == 1) {
 ?>
@@ -97,8 +98,8 @@ final class Template8dd015d538 extends Latte\Runtime\Template
                                                         <td>PRACOWNIK</td>
 <?php
 			}
-			?>                                                    <td><?php echo LR\Filters::escapeHtmlText($element->name) /* line 37 */ ?></td>
-                                                    <td><?php echo LR\Filters::escapeHtmlText($element->email) /* line 38 */ ?></td>
+			?>                                                    <td><?php echo LR\Filters::escapeHtmlText($element->name) /* line 38 */ ?></td>
+                                                    <td><?php echo LR\Filters::escapeHtmlText($element->email) /* line 39 */ ?></td>
                                                     <td class="text-center">
                                                         <div class="btn-group inline">
                                                             <button type="button" class="btn btn-success"><i class="fas fa-edit" style="font-size: 16px"></i>Edytuj</button>

@@ -11,7 +11,7 @@ class Book extends Model {
 
     public function init() {
         $this->relations = [
-            new RelationKey('authors', 'author_id', 'id'),
+            //new RelationKey('authors', 'author_id', 'id'),
         ];
     }
 

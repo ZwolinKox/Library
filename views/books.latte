@@ -5,6 +5,90 @@
 
 {block content}
 
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edytuj książkę</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form method="POST" id="editForm" action="./books/edit/1">
+                <div class="form-group">
+                    <label for="bookName" class="col-form-label">Nazwa książki:</label>
+                    <input type="text" class="form-control" name="bookName" id="bookName">
+                </div>
+                <div class="form-group">
+                    <label for="authorId" class="col-form-label">Autor</label>
+                    <select name="authorId" id="authorId" class="form-control">
+                        {foreach $authors as $element}
+                            <option value="{$element->id}">{$element->first_name} {$element->last_name}</option>
+                        {/foreach}
+                    </select>
+                </div>                      
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Czy na pewno chcesz usunąć książkę <span id="deleteBookName"></span> </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <button type="submit" class="btn btn-md btn-danger" id="deleteBookHref">Tak</button>
+                <button type="button" class="btn btn-md btn-primary" data-dismiss="modal" aria-label="Close" class="btn btn-primary">Nie</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+    <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newModalLabel">Nowa książka</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+            <form method="POST" id="newForm" action="./books">
+                <div class="form-group">
+                    <label for="bookName" class="col-form-label">Nazwa książki:</label>
+                    <input type="text" class="form-control" name="bookName" id="newBookName">
+                </div>
+                <div class="form-group">
+                    <label for="authorId" class="col-form-label">Autor</label>
+                    <select name="authorId" id="newAuthorId" class="form-control">
+                        {foreach $authors as $element}
+                            <option value="{$element->id}">{$element->first_name} {$element->last_name}</option>
+                        {/foreach}
+                    </select>
+                </div>                      
+            </div>
+            <div class="modal-footer text-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                <button type="submit" class="btn btn-primary">Dodaj książkę</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+
     <div class="container body-content">
     <button type="button" class="btn btn-primary" style="margin: 15px" onclick="location.href='./home'">Wróć do menu</button>
         <div class="page-header">
@@ -13,7 +97,8 @@
                 <fieldset>
                     <form action="" class="form-group" method="post">
                         <div class="table-responsive">
-                            <div class="table-responsive">                            
+                            <div class="table-responsive">     
+                                <button type="button" class="float-right btn btn-primary" data-target="#newModal" data-toggle="modal" style="margin: 15px">Dodaj książke</button>                       
                                 <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%" data-toggle="table" data-locale="pl-PL">
                                     <thead>
                                         <tr>
@@ -31,8 +116,10 @@
                                                     <td>{$element->author_first_name} {$element->author_last_name}</td>
                                                     <td class="text-center">
                                                         <div class="btn-group inline">
-                                                            <button type="button" class="btn btn-success"><i class="fas fa-edit" style="font-size: 16px"></i>Edytuj</button>
-                                                            <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt" style="font-size: 16px"></i>Usuń</button>
+                                                            <button type="button" class="btn btn-success"><i class="fas fa-edit" style="font-size: 16px"  data-target="#editModal" data-toggle="modal" 
+                                                                data-book-id="{$element->id}" data-book-name="{$element->name}"></i>Edytuj</button>
+                                                            <button type="button" class="btn btn-danger"><i class="fas fa-trash-alt" style="font-size: 16px" data-target="#deleteModal" data-toggle="modal"
+                                                                data-book-id="{$element->id}" data-book-name="{$element->name}"></i>Usuń</button>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -49,4 +136,26 @@
     </div>
     
 
+{/block}
+    
+{block script}
+    <script>
+        $('#editModal').on('show.bs.modal', function(e) {
+            const bookId = $(e.relatedTarget).data('book-id');
+            const bookName = $(e.relatedTarget).data('book-name');
+            
+            $(e.currentTarget).find('form').attr('action', './books/edit/' + bookId);
+            $(e.currentTarget).find('input[name="bookName"]').val(bookName);
+        });
+
+         $('#deleteModal').on('show.bs.modal', function(e) {
+            const bookId = $(e.relatedTarget).data('book-id');
+            const bookName = $(e.relatedTarget).data('book-name');
+            
+            $(e.currentTarget).find('#deleteBookName').text(bookName);
+            $(e.currentTarget).find('#deleteBookHref').click(function() {
+                location.href = "./books/delete/" + bookId;
+            });
+        });
+    </script>
 {/block}

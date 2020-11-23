@@ -17,4 +17,40 @@ class EmployeeController {
 
         return View::render('employees', ['employees' => (object)$employees]);
     }
+
+    public function newBook() {
+
+        $employee = new Employee;
+
+        $employee->insert([
+            'name' => Post::get('employeeName'),
+            'email' => Post::get('employeeEmail'),
+            'is_admin' => Post::get('isAdmin')
+        ]);
+
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+        exit;
+    }
+
+    public function editBook($id) {
+        $employee = new Employee;
+
+        $employee->update(['id' => $id], [
+            'name' => Post::get('employeeName'),
+            'email' => Post::get('employeeEmail'),
+            'is_admin' => Post::get('isAdmin')
+        ]);
+
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+        exit;
+    }
+
+    public function deleteBook($id) {
+        $employee = new Employee;
+
+        $employee->delete(['id' => $id]);
+
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+        exit;
+    }
 }

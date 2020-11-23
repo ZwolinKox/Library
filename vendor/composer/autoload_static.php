@@ -20,6 +20,10 @@ class ComposerStaticInit4d1403ca2801f8c9db2ac04f87d6836a
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
         ),
+        'R' => 
+        array (
+            'Rakit\\Validation\\' => 17,
+        ),
         'P' => 
         array (
             'Phroute\\Phroute\\' => 16,
@@ -54,6 +58,10 @@ class ComposerStaticInit4d1403ca2801f8c9db2ac04f87d6836a
         'Symfony\\Component\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Rakit\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rakit/validation/src',
         ),
         'Phroute\\Phroute\\' => 
         array (

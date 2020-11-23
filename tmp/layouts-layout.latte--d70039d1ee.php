@@ -8,11 +8,13 @@ final class Templated70039d1ee extends Latte\Runtime\Template
 	public $blocks = [
 		'title' => 'blockTitle',
 		'content' => 'blockContent',
+		'script' => 'blockScript',
 	];
 
 	public $blockTypes = [
 		'title' => 'html',
 		'content' => 'html',
+		'script' => 'html',
 	];
 
 
@@ -119,6 +121,10 @@ final class Templated70039d1ee extends Latte\Runtime\Template
                 <p style="margin-top: 25px;">Biblioteka 2020 &copy;</p>
         </footer>
     </div>
+
+    <?php
+		$this->renderBlock('script', get_defined_vars());
+?>
   </body>
 </html>
 <?php
@@ -133,6 +139,12 @@ final class Templated70039d1ee extends Latte\Runtime\Template
 
 
 	public function blockContent(array $_args): void
+	{
+		
+	}
+
+
+	public function blockScript(array $_args): void
 	{
 		
 	}
